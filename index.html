@@ -19,8 +19,8 @@
     <!-- Assessment 1: 显示 key1 和 key2 -->
     <div id="assessment1">
         <h2>Assessment 1: Display Query Parameters</h2>
-        <p>Key1: <span id="display-key1"></span></p>
-        <p>Key2: <span id="display-key2"></span></p>
+        <p>Key1: <span id="key1"></span></p>
+        <p>Key2: <span id="key2"></span></p>
     </div>
 
     <!-- Assessment 2 的状态显示 -->
@@ -28,16 +28,5 @@
         <h2>Assessment 2: Pass Data to Impact</h2>
         <p>Data sent to Impact: <span id="impact-status">Waiting...</span></p>
     </div>
-
-    <!-- 提取 URL 参数的逻辑 -->
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const key1 = urlParams.get('key1') || 'Not Found';
-        const key2 = urlParams.get('key2') || 'Not Found';
-
-        // Assessment 1: 显示参数
-        document.getElementById('display-key1').textContent = key1;
-        document.getElementById('display-key2').textContent = key2;
-    </script>
 </body>
 </html>
