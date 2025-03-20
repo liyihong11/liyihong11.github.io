@@ -26,6 +26,9 @@
 
 ## 3. Google Tag Manager 配置
 
+### 3.0 Tag Manager Live Version Overview
+![Live Version配置图](image-13.png)
+
 ### 3.1 变量配置
 - ​**变量名称**：`key1`  
   ![key1 变量配置截图](image.png)  
