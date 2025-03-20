@@ -32,12 +32,12 @@
     <!-- 提取 URL 参数的逻辑 -->
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const key1 = urlParams.get('key1') || 'Not Found';
-        const key2 = urlParams.get('key2') || 'Not Found';
+        const urlkey1 = urlParams.get('key1') || 'Not Found';
+        const urlkey2 = urlParams.get('key2') || 'Not Found';
 
         // Assessment 1: 显示参数
-        document.getElementById('display-key1').textContent = key1;
-        document.getElementById('display-key2').textContent = key2;
+        document.getElementById('display-key1').textContent = urlkey1;
+        document.getElementById('display-key2').textContent = urlkey2;
     </script>
 </body>
 </html>
