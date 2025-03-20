@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact.com Assessments 1 & 2</title>
     
-    <!-- Google Tag Manager (保留 Assessment 1 的 GTM 代码) -->
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,15 +23,14 @@
         <p>Key2: <span id="display-key2"></span></p>
     </div>
 
-    <!-- Assessment 2: 动态加载 Impact 脚本 -->
+    <!-- Assessment 2 的状态显示 -->
     <div id="assessment2">
         <h2>Assessment 2: Pass Data to Impact</h2>
         <p>Data sent to Impact: <span id="impact-status">Waiting...</span></p>
     </div>
 
-    <!-- 共用逻辑：提取 URL 参数 -->
+    <!-- 提取 URL 参数的逻辑 -->
     <script>
-        // 提取 key1 和 key2 的共用逻辑
         const urlParams = new URLSearchParams(window.location.search);
         const key1 = urlParams.get('key1') || 'Not Found';
         const key2 = urlParams.get('key2') || 'Not Found';
@@ -40,30 +38,6 @@
         // Assessment 1: 显示参数
         document.getElementById('display-key1').textContent = key1;
         document.getElementById('display-key2').textContent = key2;
-    </script>
-
-    <!-- Assessment 2: 动态加载 Impact 脚本并传递数据 -->
-    <script type="text/javascript">
-        // 加载 Impact 脚本
-        (function(a, b, c, d, e, f, g) {
-            e['ire_o'] = c;
-            e[c] = e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};
-            f = d.createElement(b);
-            g = d.getElementsByTagName(b)[0];
-            f.async = 1;
-            f.src = a;
-            g.parentNode.insertBefore(f, g);
-        })('https://utt.impactcdn.com/A2788006-de3d-4011-a57c-c4737e79de0365535.js', 'script', 'ire', document, window);
-
-        // 传递数据到 Impact，并更新页面状态
-        window.ire = window.ire || function() {
-            (window.ire.q = window.ire.q || []).push(arguments);
-            document.getElementById('impact-status').textContent = 'Sent: ' + JSON.stringify(arguments[1]);
-        };
-        window.ire('identify', {
-            customerid: key1,
-            customeremail: key2
-        });
     </script>
 </body>
 </html>
